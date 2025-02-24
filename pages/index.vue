@@ -24,7 +24,7 @@ const find = ref(false);
           Лучшие варианты недвижимости на Серевном Кипре
         </p>
         <NuxtLink
-          to="/catalog"
+          to="/Collections"
           class="bg-white hover:bg-black hover:text-white transition font-medium w-40 h-9 text-lg flex justify-center items-center shadow-black shadow-2xl rounded-xl"
           >Подборки</NuxtLink
         >
@@ -123,7 +123,15 @@ const find = ref(false);
         >
           <SelectObject v-for="(_, index) in 10" :key="index" />
         </div>
-        <SelectMapFind />
+        <div class="w-[845px] h-[742px] rounded-lg">
+          <LMap :zoom="12" :center="[51.13, 71.42]" class="w-full h-full">
+            <LTileLayer
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            />
+            <LMarker :lat-lng="[51.13, 71.42]" />
+          </LMap>
+        </div>
       </div>
     </div>
     <div class="max-w-container mx-auto mt-20">
@@ -132,7 +140,7 @@ const find = ref(false);
         <Catalog v-for="(_, index) in 6" :key="index" />
       </div>
       <NuxtLink
-        to="/catalog"
+        to="/Collections"
         class="bg-white hover:bg-black hover:text-white transition font-medium w-44 h-12 text-lg flex justify-center items-center shadow-black shadow-sm rounded-xl"
         >Посмотреть все</NuxtLink
       >
@@ -145,7 +153,7 @@ const find = ref(false);
           3-4 дня.
         </h2>
         <NuxtLink
-          to="/tour"
+          to="/Cyprus"
           class="bg-white hover:bg-black hover:text-white mx-auto transition font-medium w-56 h-12 text-2xl flex justify-center items-center shadow-black shadow-sm rounded-xl"
           >Подробнее</NuxtLink
         >
