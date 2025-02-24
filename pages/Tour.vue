@@ -17,10 +17,10 @@ const find = ref(false);
 <template>
   <div>
     <div
-      class="w-full h-[384px]"
+      class="w-full h-[384px] z-50 relative"
       :class="{ 'bg-find': find, 'bg-[#e9d9ce]': !find }"
     >
-      <div class="max-w-container mx-auto py-5 flex justify-between z-50">
+      <div class="max-w-container mx-auto py-5 flex justify-between">
         <div>
           <p class="text-xl font-bold mb-2">Показать на карте</p>
           <div class="w-64 h-64 rounded-lg">
@@ -72,8 +72,8 @@ const find = ref(false);
         </div>
       </div>
     </div>
-    <div v-if="find" class="mt-[-384px]">
-      <div class="w-full h-[1318px]">
+    <div v-if="find">
+      <div class="w-full h-[1318px] mt-[-384px] mb-[-384px]">
         <LMap :zoom="12" :center="[51.13, 71.42]" class="w-full h-full">
           <LTileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -82,7 +82,7 @@ const find = ref(false);
           <LMarker :lat-lng="[51.13, 71.42]" />
         </LMap>
       </div>
-      <div class="w-full h-[360px] bg-slider z-50">
+      <div class="w-full h-[360px] bg-slider z-50 relative">
         <div
           class="max-w-container mx-auto flex items-center justify-between pb-8"
         >
