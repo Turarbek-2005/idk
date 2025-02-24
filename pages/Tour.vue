@@ -73,7 +73,7 @@ const find = ref(false);
       </div>
     </div>
     <div v-if="find">
-      <div class="w-full h-[1318px] mt-[-384px] mb-[-384px]">
+      <div class="w-full h-[1318px] mt-[-384px] mb-[-384px] z-0">
         <LMap :zoom="12" :center="[51.13, 71.42]" class="w-full h-full">
           <LTileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
