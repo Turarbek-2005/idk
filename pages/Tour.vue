@@ -20,7 +20,7 @@ const find = ref(false);
       class="w-full h-[384px]"
       :class="{ 'bg-find': find, 'bg-[#e9d9ce]': !find }"
     >
-      <div class="max-w-container mx-auto py-5 flex justify-between">
+      <div class="max-w-container mx-auto py-5 flex justify-between z-50">
         <div>
           <p class="text-xl font-bold mb-2">Показать на карте</p>
           <div class="w-64 h-64 rounded-lg">
@@ -82,7 +82,7 @@ const find = ref(false);
           <LMarker :lat-lng="[51.13, 71.42]" />
         </LMap>
       </div>
-      <div class="w-full h-[360px] bg-slider">
+      <div class="w-full h-[360px] bg-slider z-50">
         <div
           class="max-w-container mx-auto flex items-center justify-between pb-8"
         >
