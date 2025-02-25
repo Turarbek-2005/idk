@@ -6,7 +6,7 @@ import "leaflet/dist/leaflet.css";
   <div>
     <AdminHeader />
     <div class="max-w-container mx-auto my-16">
-      <h3 class="text-3xl font-bold mb-4">Название объекта</h3>
+      <h3 class="text-3xl font-bold mb-4">{{ $t("object_title") }}</h3>
       <div class="flex justify-between">
         <div>
           <div class="w-[553px] h-[464px] bg-zinc-300 rounded-md mb-5"></div>
@@ -28,7 +28,7 @@ import "leaflet/dist/leaflet.css";
               <div class="mr-2">
                 <NuxtImg src="/Admin/vector.svg" width="30" height="30" />
               </div>
-              <label class="text-lg">45 м² площадь</label>
+              <label class="text-lg">{{ $t("area") }}</label>
             </div>
             <div
               class="min-w-[256px] h-[55px] p-[14px] flex items-center rounded-lg shadow-xl"
@@ -36,52 +36,17 @@ import "leaflet/dist/leaflet.css";
               <div class="mr-2">
                 <NuxtImg src="/Admin/vector.svg" width="30" height="30" />
               </div>
-              <label class="text-lg">45 м² площадь</label>
-            </div>
-            <div
-              class="min-w-[256px] h-[55px] p-[14px] flex items-center rounded-lg shadow-xl"
-            >
-              <div class="mr-2">
-                <NuxtImg src="/Admin/vector.svg" width="30" height="30" />
-              </div>
-              <label class="text-lg">45 м² площадь</label>
-            </div>
-            <div
-              class="min-w-[256px] h-[55px] p-[14px] flex items-center rounded-lg shadow-xl"
-            >
-              <div class="mr-2">
-                <NuxtImg src="/Admin/vector.svg" width="30" height="30" />
-              </div>
-              <label class="text-lg">45 м² площадь</label>
-            </div>
-            <div
-              class="min-w-[256px] h-[55px] p-[14px] flex items-center rounded-lg shadow-xl"
-            >
-              <div class="mr-2">
-                <NuxtImg src="/Admin/vector.svg" width="30" height="30" />
-              </div>
-              <label class="text-lg">45 м² площадь</label>
+              <label class="text-lg">{{ $t("area") }}</label>
             </div>
           </div>
-          <p>
-            Это текст о компании. Он необходим для дальнейшего продвижения
-            Вашего сайта. Вам будет необходимо предоставить исходные данные, по
-            которым наши копирайтеры составят правильный текст. Это текст о
-            компании. Он необходим для дальнейшего продвижения Вашего сайта. Вам
-            будет необходимо предоставить исходные данные, по которым наши
-            копирайтеры составят правильный текст.
-          </p>
-          <p>
-            Вам будет необходимо предоставить исходные данные, по которым наши
-            копирайтеры составят правильный текст.
-          </p>
-
+          <p>{{ $t("company_description1") }}</p>
+          <p>{{ $t("company_description2") }}</p>
           <Dialog>
             <DialogTrigger as-child>
               <button
                 class="bg-white mt-8 hover:bg-black hover:text-white transition font-medium w-64 h-[70px] text-2xl flex justify-center items-center shadow-black shadow-md rounded-xl"
               >
-                Забронировать
+                {{ $t("book_now") }}
               </button>
             </DialogTrigger>
             <DialogContent class="h-[580px] flex">
@@ -92,32 +57,31 @@ import "leaflet/dist/leaflet.css";
                 class="w-[455px] h-full flex pt-[88px] items-center flex-col"
               >
                 <div class="w-72">
-                  <h2 class="text-3xl font-bold mb-7">Забронировать</h2>
+                  <h2 class="text-3xl font-bold mb-7">{{ $t("book_now") }}</h2>
                   <div class="flex flex-col gap-4 mb-6">
                     <input
                       type="text"
                       class="w-72 h-12 shadow-xl outline-none rounded-lg pl-3"
-                      placeholder="Ваше имя"
+                      :placeholder="$t('your_name')"
                     />
                     <input
                       type="text"
                       class="w-72 h-12 shadow-xl outline-none rounded-lg pl-3"
-                      placeholder="Ваш телефон"
+                      :placeholder="$t('your_phone')"
                     />
                     <textarea
                       type="text"
                       class="w-72 h-[118px] shadow-xl outline-none rounded-lg p-3 resize-none"
-                      placeholder="Сообщение"
+                      :placeholder="$t('your_message')"
                     />
                   </div>
                   <button
                     class="bg-white hover:bg-black hover:text-white transition font-medium w-[88px] h-6 text-[10px] flex justify-center items-center shadow-black shadow-sm rounded-md"
                   >
-                    Отправить
+                    {{ $t("send") }}
                   </button>
                   <p class="w-80 text-[10px] font-medium mt-20">
-                    Информация полностью концнфициальна и не передается третьим
-                    лицам.
+                    {{ $t("confidentiality_notice") }}
                   </p>
                 </div>
               </div>
@@ -145,6 +109,7 @@ import "leaflet/dist/leaflet.css";
     <Question />
   </div>
 </template>
+
 <style scoped>
 ::-webkit-scrollbar {
   width: 6px;

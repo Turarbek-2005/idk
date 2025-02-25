@@ -9,41 +9,38 @@
         <label class="text-3xl">+</label>
       </button>
       <div class="w-[884px] flex flex-col gap-2">
-        <h3 class="text-4xl font-bold">Имя Фамилия</h3>
+        <h3 class="text-4xl font-bold">{{ $t("name_surname") }}</h3>
         <p class="text-lg font-medium">
-          Необходим для дальнейшего продвижения Вашего сайта
+          {{ $t("site_promotion_needed") }}
         </p>
         <p class="text-md">
-          Это текст о компании. Он необходим для дальнейшего продвижения Вашего
-          сайта. Вам будет необходимо предоставить исходные данные, по которым
-          наши копирайтеры текст.
+          {{ $t("company_text") }}
         </p>
         <p class="text-md">
-          Это текст о компании. Он необходим для дальнейшего продвижения Вашего
-          сайта. Вам будет необходимо предоставить исходные данные, по которым
-          наши копирайтеры текст.
+          {{ $t("company_text") }}
         </p>
         <div class="flex gap-5">
           <div class="w-32">
             <h4 class="text-5xl font-medium mb-2">23</h4>
-            <p class="text-lg font-medium">Этот текст о сотруднике</p>
+            <p class="text-lg font-medium">{{ $t("employee_text") }}</p>
           </div>
           <div class="w-32">
             <h4 class="text-5xl font-medium mb-2">23</h4>
-            <p class="text-lg font-medium">Этот текст о сотруднике</p>
+            <p class="text-lg font-medium">{{ $t("employee_text") }}</p>
           </div>
           <div class="w-32">
             <h4 class="text-5xl font-medium mb-2">23</h4>
-            <p class="text-lg font-medium">Этот текст о сотруднике</p>
+            <p class="text-lg font-medium">{{ $t("employee_text") }}</p>
           </div>
           <button
             class="bg-white hover:bg-black mb-8 hover:text-white transition ml-auto mt-16 font-medium w-44 h-12 text-lg flex justify-center items-center shadow-black shadow-sm rounded-xl"
           >
-            Редактировать
+            {{ $t("edit") }}
           </button>
         </div>
       </div>
     </div>
   </div>
 </template>
+
 <style scoped></style>

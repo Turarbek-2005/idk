@@ -5,19 +5,19 @@
       to="/Admin/Collections"
       class="bg-white font-medium w-[260px] h-[38px] hover:font-bold text-lg flex justify-center items-center shadow-md rounded-xl transition"
     >
-      Подборки
+      {{ $t("collections") }}
     </NuxtLink>
     <NuxtLink
       to="/Admin/Catalog"
       class="bg-white font-medium w-[260px] h-[38px] hover:font-bold text-lg flex justify-center items-center shadow-md rounded-xl transition"
     >
-      Каталог
+      {{ $t("catalog") }}
     </NuxtLink>
     <NuxtLink
       to="/Admin/Specialists"
       class="bg-white font-medium w-[260px] h-[38px] hover:font-bold text-lg flex justify-center items-center shadow-md rounded-xl transition"
     >
-      Специатисты
+      {{ $t("specialists") }}
     </NuxtLink>
   </div>
 </template>

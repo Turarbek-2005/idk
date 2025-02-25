@@ -14,61 +14,45 @@ const value = ref<DateValue>();
   <div class="bg h-[1165px]">
     <div class="max-w-container mx-auto pt-[100px]">
       <h2 class="text-[40px] font-bold text-center mb-3">
-        Откройте Северный Кипр уже сегодня!<br />
-        <label class="text-[#910000]">Беспланый</label> ознакомительный тур на
-        3-4 дня.
+        {{ $t("tour_title") }}<br />
+        <label class="text-[#910000]">{{ $t("tour_free") }}</label>
       </h2>
       <p class="text-xl font-medium text-center mx-5 mb-[225px]">
-        БЕСПЛАТНЫЙ ознакомительный тур от нашей компании – это уникальная
-        возможность познакомиться с Северным Кипром и найти свой идеальный дом
-        на берегу Средиземного моря
+        {{ $t("tour_description") }}
       </p>
       <div class="text-white grid grid-cols-2 gap-x-14 gap-y-5 mb-14">
         <div>
-          <h4 class="text-4xl font-bold mb-3">Организация поездки</h4>
-          <p>
-            Мы позаботимся обо всем — поможем подобрать билеты, обеспечим
-            трансфер из аэропорта и комфортное проживание в апартаментах у моря.
-          </p>
+          <h4 class="text-4xl font-bold mb-3">{{ $t("trip_organization") }}</h4>
+          <p>{{ $t("trip_organization_desc") }}</p>
         </div>
         <div>
-          <h4 class="text-4xl font-bold mb-3">Обзор недвижимости</h4>
-          <p>
-            Осмотрите только проверенные и юридически безопасные объекты,
-            которые идеально подойдут для вашего нового дома.
-          </p>
+          <h4 class="text-4xl font-bold mb-3">
+            {{ $t("real_estate_review") }}
+          </h4>
+          <p>{{ $t("real_estate_review_desc") }}</p>
         </div>
         <div>
-          <h4 class="text-4xl font-bold mb-3">Экскурсия по Северному Кипру</h4>
-          <p>
-            Увидите самые красивые уголки острова, познакомитесь с культурой и
-            местной кухней, а также по запросу возможны посещение детских садов,
-            университетов и т.д.
-          </p>
+          <h4 class="text-4xl font-bold mb-3">{{ $t("excursion") }}</h4>
+          <p>{{ $t("excursion_desc") }}</p>
         </div>
         <div>
-          <h4 class="text-4xl font-bold mb-3">Полное сопровождение сделки</h4>
-          <p>
-            Наша команда окажет юридическую поддержку на каждом этапе сделки —
-            от выбора недвижимости до подписания контракта.
-          </p>
+          <h4 class="text-4xl font-bold mb-3">{{ $t("deal_support") }}</h4>
+          <p>{{ $t("deal_support_desc") }}</p>
         </div>
       </div>
       <p class="text-xl text-white font-medium text-center mx-5 mb-7">
-        Начните свое путешествие к новой жизни на Северном Кипре прямо сейчас!
-        Забронируйте ваш бесплатный тур и откройте для себя все возможности
-        этого райского уголка!
+        {{ $t("tour_cta") }}
       </p>
       <div class="flex justify-center gap-8 mb-7">
         <input
           type="text"
           class="w-[260px] h-12 shadow-xl outline-none rounded-lg pl-2"
-          placeholder="Ваше имя"
+          :placeholder="$t('your_name')"
         />
         <input
           type="text"
           class="w-[260px] h-12 shadow-xl outline-none rounded-lg pl-2"
-          placeholder="Ваш телефон"
+          :placeholder="$t('your_phone')"
         />
         <Popover>
           <PopoverTrigger as-child>
@@ -79,7 +63,7 @@ const value = ref<DateValue>();
               {{
                 value
                   ? df.format(value.toDate(getLocalTimeZone()))
-                  : "Желаемый месяц тура"
+                  : $t("desired_month")
               }}
             </Button>
           </PopoverTrigger>
@@ -91,15 +75,15 @@ const value = ref<DateValue>();
       <button
         class="bg-white mx-auto transition font-medium w-[166px] h-10 text-xl flex justify-center items-center shadow-black shadow-sm rounded-xl"
       >
-        Отправить
+        {{ $t("send") }}
       </button>
-      <label class="text-sm text-white flex justify-center mt-3"
-        >Информация полностью концнфициальна и не передается третьим
-        лицам.</label
-      >
+      <label class="text-sm text-white flex justify-center mt-3">
+        {{ $t("confidentiality") }}
+      </label>
     </div>
   </div>
 </template>
+
 <style scoped>
 .bg {
   background-image: url(/Cyprus/bg.jpg);

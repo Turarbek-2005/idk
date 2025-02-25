@@ -1,22 +1,28 @@
 <script setup lang="ts">
-interface Language {
-  code: string;
-  label: string;
-}
+import { useI18n } from "vue-i18n";
+import { ref, computed } from "vue";
+
+const { locale, t } = useI18n();
 
 const languages = ref([
-  { code: "ru", label: "РУС" },
-  { code: "tr", label: "TÜR" },
-  { code: "de", label: "DEU" },
-  { code: "en", label: "ENG" },
+  { code: "ru", label: "Русский", short: "РУС" },
+  { code: "tr", label: "Türkçe", short: "TÜR" },
+  { code: "de", label: "Deutsch", short: "DEU" },
+  { code: "en", label: "English", short: "ENG" },
 ]);
 
-const selectedLanguage = ref(languages.value[0]);
-const setLanguage = (lang: Language) => {
-  selectedLanguage.value = lang;
-  // Здесь можно добавить логику смены языка, например, через i18n
+const selectedLanguage = computed(
+  () =>
+    languages.value.find((lang) => lang.code === locale.value) ||
+    languages.value[0]
+);
+
+const setLanguage = (code: string) => {
+  locale.value = code;
+  localStorage.setItem("user-lang", code);
 };
 </script>
+
 <template>
   <div
     class="max-w-container mx-auto h-[122px] justify-between items-center flex"
@@ -26,16 +32,16 @@ const setLanguage = (lang: Language) => {
         to="/"
         class="w-[66px] h-[51px] bg-black rounded-xl justify-center items-center flex mr-8 text-white"
       >
-        Лого
+        {{ t("logo") }}
       </NuxtLink>
       <nav class="flex items-center gap-7 font-medium">
-        <NuxtLink to="/Collections">Подборки</NuxtLink>
-        <NuxtLink to="/tour">Тур</NuxtLink>
-        <NuxtLink to="/about">О компании</NuxtLink>
-        <NuxtLink to="/contacts">Контакты</NuxtLink>
+        <NuxtLink to="/Collections">{{ t("collections") }}</NuxtLink>
+        <NuxtLink to="/tour">{{ t("tour") }}</NuxtLink>
+        <NuxtLink to="/about">{{ t("about") }}</NuxtLink>
+        <NuxtLink to="/contacts">{{ t("contacts") }}</NuxtLink>
         <Dialog class="z-50 relative">
           <DialogTrigger as-child>
-            <button>Вход</button>
+            <button>{{ t("login") }}</button>
           </DialogTrigger>
           <DialogContent class="h-[580px] flex">
             <div>
@@ -45,25 +51,26 @@ const setLanguage = (lang: Language) => {
               class="w-[455px] h-full flex items-center justify-center flex-col"
             >
               <div class="w-72">
-                <h2 class="text-3xl font-bold mb-7">Войти</h2>
+                <h2 class="text-3xl font-bold mb-7">{{ t("login") }}</h2>
                 <div class="flex flex-col gap-4 mb-6">
                   <input
                     type="text"
                     class="w-72 h-12 shadow-xl outline-none rounded-lg pl-2"
-                    placeholder="Ваш аккаунт"
+                    :placeholder="t('your_account')"
                   />
                   <input
-                    type="text"
+                    type="password"
                     class="w-72 h-12 shadow-xl outline-none rounded-lg pl-2"
-                    placeholder="Ваш пароль"
+                    :placeholder="t('your_password')"
                   />
                 </div>
                 <DialogClose>
                   <NuxtLink
                     to="/Admin/Collections"
                     class="bg-white hover:bg-black hover:text-white transition font-medium w-[88px] h-6 text-[10px] flex justify-center items-center shadow-black shadow-sm rounded-md"
-                    >Войти</NuxtLink
                   >
+                    {{ t("login") }}
+                  </NuxtLink>
                 </DialogClose>
               </div>
             </div>
@@ -86,7 +93,7 @@ const setLanguage = (lang: Language) => {
       <DropdownMenu>
         <DropdownMenuTrigger as-child class="flex items-center">
           <button class="flex items-center gap-1">
-            <p class="font-bold">{{ selectedLanguage.label }}</p>
+            <p class="font-bold">{{ selectedLanguage.short }}</p>
             <div>
               <NuxtImg width="20px" height="20px" src="/Header/language.png" />
             </div>
@@ -95,17 +102,16 @@ const setLanguage = (lang: Language) => {
             </div>
           </button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent class="w-32">
+        <DropdownMenuContent class="w-24">
           <DropdownMenuItem
             v-for="lang in languages"
             :key="lang.code"
-            @click="setLanguage(lang as Language)"
+            @click="setLanguage(lang.code)"
           >
-            {{ lang.label }}
+            {{ lang.short }}
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
     </div>
   </div>
 </template>
-<style scoped></style>

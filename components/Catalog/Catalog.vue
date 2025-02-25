@@ -13,14 +13,14 @@
       />
     </div>
     <div class="w-full h-full pt-4 text-center font-bold text-lg">
-      Готовые объекты с ключами
+      {{ $t("ready_objects") }}
     </div>
 
     <div
       class="absolute bottom-[-1px] right-[-1px] w-[360px] flex justify-center items-center bg h-[280px] rounded-lg shadow-md cursor-pointer transition opacity-0 bg-white hover:opacity-100"
     >
       <h4 class="text-white text-2xl font-bold text-center">
-        Топ 5 проектов по стартовым ценам
+        {{ $t("top_projects") }}
       </h4>
     </div>
   </div>

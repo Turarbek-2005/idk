@@ -5,12 +5,12 @@ const edit = ref(false);
   <div>
     <AdminHeader />
     <div class="max-w-container mx-auto mt-16">
-      <h2 class="text-5xl font-bold text-center mb-8">Каталог</h2>
+      <h2 class="text-5xl font-bold text-center mb-8">{{ $t("catalog") }}</h2>
       <button
         class="bg-white hover:bg-black mb-8 hover:text-white transition mx-auto font-medium w-44 h-12 text-lg flex justify-center items-center shadow-black shadow-sm rounded-xl"
         @click="edit = !edit"
       >
-        {{ edit ? "Сохранить" : "Редактировать" }}
+        {{ edit ? $t("save") : $t("edit") }}
       </button>
       <div class="grid grid-cols-3 gap-8 mb-24">
         <NuxtLink
@@ -25,15 +25,15 @@ const edit = ref(false);
                 class="w-full"
                 height="134px"
                 src="/Home/object.png"
-                alt="Объект"
+                :alt="$t('object_name')"
               />
             </div>
             <div class="w-full h-full py-2 px-4 flex-col flex gap-1">
-              <h4 class="font-bold">Название объекта</h4>
+              <h4 class="font-bold">{{ $t("object_name") }}</h4>
               <div class="w-6 bg-black h-[1px]"></div>
               <div class="flex items-center justify-between">
-                <p class="font-medium">Адрес</p>
-                <p class="font-bold">Цена</p>
+                <p class="font-medium">{{ $t("address") }}</p>
+                <p class="font-bold">{{ $t("price") }}</p>
               </div>
             </div>
             <div
@@ -42,16 +42,18 @@ const edit = ref(false);
               <div
                 class="h-[220px] bg-object w-[360px] ml-[-3px] flex-col flex gap-2 text-white -m-[2px] px-5 py-7"
               >
-                <h4 class="text-lg font-medium">Название объекта</h4>
+                <h4 class="text-lg font-medium">{{ $t("object_name") }}</h4>
                 <div class="w-8 bg-white h-[2px]"></div>
                 <div>
-                  <p class="font-medium">Адрес</p>
-                  <p class="text-md">Площадь (кв. м.)</p>
-                  <p class="font-bold text-md flex justify-end mt-14">Цена</p>
+                  <p class="font-medium">{{ $t("address") }}</p>
+                  <p class="text-md">{{ $t("area") }}</p>
+                  <p class="font-bold text-md flex justify-end mt-14">
+                    {{ $t("price") }}
+                  </p>
                 </div>
               </div>
               <div class="w-full h-full py-3 px-4 font-bold">
-                Узнать подробнее
+                {{ $t("learn_more") }}
               </div>
             </div>
           </div></NuxtLink
@@ -62,7 +64,7 @@ const edit = ref(false);
         >
           <div class="w-[360px] h-[180px] bg-zinc-300 rounded-md"></div>
           <div class="w-full h-full pt-4 text-center font-bold text-lg">
-            Введите название подборки
+            {{ $t("enter_collection_name") }}
           </div>
         </div>
         <NuxtLink
@@ -76,6 +78,7 @@ const edit = ref(false);
     </div>
   </div>
 </template>
+
 <style scoped>
 .bg-object {
   background-image: url(/Home/object-cursor.png);

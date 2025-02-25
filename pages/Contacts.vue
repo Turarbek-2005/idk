@@ -8,22 +8,20 @@ import "leaflet/dist/leaflet.css";
       class="max-w-container mx-auto my-[100px] flex justify-between items-center"
     >
       <div class="flex flex-col gap-2">
-        <h4 class="mb-6 text-5xl font-bold">Контакты</h4>
+        <h4 class="mb-6 text-5xl font-bold">{{ $t("contacts") }}</h4>
         <div>
-          <p class="font-bold mb-2">Адрес:</p>
-          <p class="w-[320px]">
-            РК, г. Астана, улица Здесь будет улица 24, Бизнес-центр Столичный 78
-          </p>
+          <p class="font-bold mb-2">{{ $t("address") }}:</p>
+          <p class="w-[320px]">{{ $t("full_address") }}</p>
         </div>
         <div class="flex flex-col">
-          <p class="font-bold mb-2">Телефон:</p>
+          <p class="font-bold mb-2">{{ $t("phone") }}:</p>
           <label>+7–7172–57–47–32, 29–16–10</label>
           <label>+7 708 313 68 28</label>
           <label>+7 701 711 31 17</label>
           <label>+7 701 173 31 88</label>
         </div>
         <div>
-          <p class="font-bold mb-2">Email:</p>
+          <p class="font-bold mb-2">{{ $t("email") }}:</p>
           <label>info@examplemail.kz</label>
         </div>
         <div class="flex gap-3 mt-5">
@@ -52,4 +50,5 @@ import "leaflet/dist/leaflet.css";
     <Question />
   </div>
 </template>
+
 <style scoped></style>

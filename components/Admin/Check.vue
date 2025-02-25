@@ -8,7 +8,7 @@ defineProps<{ checkbox: boolean }>();
     <div class="mr-2">
       <NuxtImg src="/Admin/vector.svg" width="20" height="18" />
     </div>
-    <label>Бассейн</label>
+    <label>{{ $t("pool") }}</label>
     <Checkbox v-if="checkbox" class="ml-auto" />
   </div>
 </template>

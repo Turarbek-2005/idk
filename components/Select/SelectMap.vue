@@ -8,11 +8,11 @@ defineProps<{ title: string }>();
       <p class="text-lg font-bold mb-2">{{ title }}</p>
       <Select class="z-10">
         <SelectTrigger>
-          <SelectValue placeholder="Все" />
+          <SelectValue :placeholder="$t('all')" />
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>
-            <SelectLabel>Все</SelectLabel>
+            <SelectLabel>{{ $t("all") }}</SelectLabel>
           </SelectGroup>
         </SelectContent>
       </Select>
