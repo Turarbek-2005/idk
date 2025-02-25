@@ -35,11 +35,11 @@ import "leaflet/dist/leaflet.css";
           </NuxtLink>
         </div>
       </div>
-      <div class="w-[748px] h-[460px]">
+      <div class="w-[748px] h-[460px] z-0">
         <LMap
           :zoom="12"
           :center="[51.13, 71.42]"
-          class="w-full h-full rounded-md"
+          class="w-full h-full rounded-md z-0"
         >
           <LTileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
