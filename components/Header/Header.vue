@@ -1,4 +1,22 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+interface Language {
+  code: string;
+  label: string;
+}
+
+const languages = ref([
+  { code: "ru", label: "РУС" },
+  { code: "tr", label: "TÜR" },
+  { code: "de", label: "DEU" },
+  { code: "en", label: "ENG" },
+]);
+
+const selectedLanguage = ref(languages.value[0]);
+const setLanguage = (lang: Language) => {
+  selectedLanguage.value = lang;
+  // Здесь можно добавить логику смены языка, например, через i18n
+};
+</script>
 <template>
   <div
     class="max-w-container mx-auto h-[122px] justify-between items-center flex"
@@ -15,7 +33,7 @@
         <NuxtLink to="/tour">Тур</NuxtLink>
         <NuxtLink to="/about">О компании</NuxtLink>
         <NuxtLink to="/contacts">Контакты</NuxtLink>
-        <Dialog>
+        <Dialog class="z-50 relative">
           <DialogTrigger as-child>
             <button>Вход</button>
           </DialogTrigger>
@@ -65,15 +83,28 @@
         </div>
         <label class="font-bold">+7 (777) 777-77-77</label>
       </div>
-      <button class="flex items-center gap-1">
-        <label class="font-bold">РУС</label>
-        <div>
-          <NuxtImg width="20px" height="20px" src="/Header/language.png" />
-        </div>
-        <div>
-          <NuxtImg width="8px" height="5px" src="/Header/Vector.png" />
-        </div>
-      </button>
+      <DropdownMenu>
+        <DropdownMenuTrigger as-child class="flex items-center">
+          <button class="flex items-center gap-1">
+            <p class="font-bold">{{ selectedLanguage.label }}</p>
+            <div>
+              <NuxtImg width="20px" height="20px" src="/Header/language.png" />
+            </div>
+            <div>
+              <NuxtImg width="8px" height="5px" src="/Header/Vector.png" />
+            </div>
+          </button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent class="w-32">
+          <DropdownMenuItem
+            v-for="lang in languages"
+            :key="lang.code"
+            @click="setLanguage(lang as Language)"
+          >
+            {{ lang.label }}
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
     </div>
   </div>
 </template>
