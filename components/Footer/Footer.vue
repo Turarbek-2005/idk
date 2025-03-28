@@ -4,7 +4,7 @@ import "leaflet/dist/leaflet.css";
 </script>
 
 <template>
-  <div class="w-full h-[370px] bg-black text-white">
+  <div class="w-full h-[370px] bg-[#E8711D] text-white">
     <div class="max-w-container mx-auto flex items-center h-full py-11">
       <div class="w-[553px] h-[280px] rounded-md mr-9">
         <LMap
@@ -42,11 +42,8 @@ import "leaflet/dist/leaflet.css";
         </div>
       </div>
       <div class="w-[2px] h-[136px] bg-white mr-16"></div>
-      <NuxtLink
-        to="/"
-        class="w-[162px] h-[126px] rounded-2xl bg-white flex items-center justify-center text-black text-4xl font-medium"
-      >
-        {{ $t("logo") }}
+      <NuxtLink to="/" class="w-[138px] h-[138px] text-white">
+        <NuxtImg src="/Footer/logo.png" alt="Логотип" />
       </NuxtLink>
     </div>
   </div>

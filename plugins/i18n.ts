@@ -6,6 +6,10 @@ export default defineNuxtPlugin((nuxtApp) => {
     locale: "ru",
     messages: {
       ru: {
+        life_in_cyprus: "Жизнь на Кипре: ваш новый дом у моря",
+        dream: "Мечтаете о жизни на солнечном Кипре?",
+        comfort:
+          "Мы не просто продаем недвижимость - мы создаем комфорт для вашей новой жизни!",
         pool: "Бассейн",
         about_employee: "Это текст о сотруднике",
         address__footer: "г.Астана, ул.Улица 245 /а",
@@ -135,6 +139,10 @@ export default defineNuxtPlugin((nuxtApp) => {
           "Информация полностью конфиденциальна и не передается третьим лицам.",
       },
       en: {
+        life_in_cyprus: "Life in Cyprus: Your New Home by the Sea",
+        dream: "Dreaming of life in sunny Cyprus?",
+        comfort:
+          "We don't just sell real estate - we create comfort for your new life!",
         pool: "Pool",
         about_employee: "This is a text about the employee",
         address__footer: "Astana, Ulitsa 245 /a",
@@ -263,6 +271,10 @@ export default defineNuxtPlugin((nuxtApp) => {
           "Your information is completely confidential and will not be shared with third parties.",
       },
       de: {
+        life_in_cyprus: "Leben auf Zypern: Ihr neues Zuhause am Meer",
+        dream: "Träumen Sie von einem Leben im sonnigen Zypern?",
+        comfort:
+          "Wir verkaufen nicht nur Immobilien - wir schaffen Komfort für Ihr neues Leben!",
         pool: "Schwimmbad",
         about_employee: "Dies ist ein Text über den Mitarbeiter",
         ready_objects: "Bezugsfertige Objekte",
@@ -396,6 +408,10 @@ export default defineNuxtPlugin((nuxtApp) => {
           "Ihre Informationen sind vollständig vertraulich und werden nicht an Dritte weitergegeben.",
       },
       tr: {
+        life_in_cyprus: "Kıbrıs’ta Yaşam: Denize Sıfır Yeni Eviniz",
+        dream: "Güneşli Kıbrıs’ta yaşamak mı hayaliniz?",
+        comfort:
+          "Sadece gayrimenkul satmıyoruz - yeni hayatınız için konfor yaratıyoruz!",
         pool: "Havuz",
         about_employee: "Bu, çalışan hakkında bir metindir",
         address__footer: "Astana, Cadde 245 /a",

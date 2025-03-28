@@ -18,7 +18,7 @@ const find = ref(false);
   <div>
     <div
       class="w-[100%] h-[384px] z-50 relative"
-      :class="{ 'bg-find': find, 'bg-[#e9d9ce]': !find }"
+      :class="{ 'bg-find': find, 'bg-[#F3B27F]': !find }"
     >
       <div class="max-w-container mx-auto py-5 flex justify-between">
         <div>
@@ -154,12 +154,12 @@ const find = ref(false);
 .bg-find {
   background: linear-gradient(
     to bottom,
-    #e9d9ce 70%,
+    #f3b27f 70%,
     rgba(233, 217, 206, 0) 100%
   );
 }
 .bg-slider {
-  background: linear-gradient(to top, #e9d9ce 70%, rgba(233, 217, 206, 0) 100%);
+  background: linear-gradient(to top, #f3b27f 70%, rgba(233, 217, 206, 0) 100%);
 }
 
 .bg-object {

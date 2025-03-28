@@ -28,11 +28,8 @@ const setLanguage = (code: string) => {
     class="max-w-container mx-auto h-[122px] justify-between items-center flex"
   >
     <div class="items-center flex">
-      <NuxtLink
-        to="/"
-        class="w-[66px] h-[51px] bg-black rounded-xl justify-center items-center flex mr-8 text-white"
-      >
-        {{ t("logo") }}
+      <NuxtLink to="/" class="w-[66px] h-[61px] mr-8 text-white">
+        <NuxtImg src="/Header/logo.svg" alt="Логотип" />
       </NuxtLink>
       <nav class="flex items-center gap-7 font-medium">
         <NuxtLink to="/Collections">{{ t("collections") }}</NuxtLink>

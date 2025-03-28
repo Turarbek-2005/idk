@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="w-full h-[476px] bg-[#E9D7CB] bg relative">
+  <div class="w-full h-[476px] bg-[#F3B27F] bg relative">
     <div class="max-w-container mx-auto pt-14 flex flex-col gap-4">
       <h3 class="text-4xl font-bold w-[427px]">
         {{ $t("contact_us_title") }}

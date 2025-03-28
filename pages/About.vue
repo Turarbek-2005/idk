@@ -32,10 +32,10 @@
       <div>
         <div class="flex justify-center gap-8 mb-8">
           <div
-            class="w-[358px] h-[234px] border border-black rounded-lg p-6 gap-2 flex flex-col text-center items-center"
+            class="w-[358px] h-[234px] rounded-lg p-6 gap-2 flex flex-col shadow-md"
             v-for="_ in 2"
           >
-            <h3 class="font-bold text-xl w-48 mx-auto">
+            <h3 class="font-bold text-xl w-48">
               {{ $t("about_direct_prices") }}
             </h3>
             <div class="bg-black w-[107px] h-[1px]">.</div>
@@ -44,10 +44,10 @@
         </div>
         <div class="flex justify-center gap-8">
           <div
-            class="w-[358px] h-[234px] border border-black rounded-lg p-6 gap-2 flex flex-col text-center items-center"
+            class="w-[358px] h-[234px] rounded-lg p-6 gap-2 flex flex-col shadow-md"
             v-for="_ in 3"
           >
-            <h3 class="font-bold text-xl w-48 mx-auto">
+            <h3 class="font-bold text-xl w-48">
               {{ $t("about_direct_prices") }}
             </h3>
             <div class="bg-black w-[107px] h-[1px]">.</div>
@@ -63,7 +63,7 @@
       <div class="grid grid-cols-3 gap-8">
         <div
           v-for="_ in 6"
-          class="w-[358px] h-[100px] border border-black rounded-lg pl-4 pt-3 pr-2 flex justify-between items-center"
+          class="w-[358px] h-[100px] shadow-md rounded-lg pl-4 pt-3 pr-2 flex justify-between items-center"
         >
           <p class="font-bold text-md w-[220px]">
             {{ $t("about_residence_help") }}
@@ -77,14 +77,16 @@
     <div class="w-full h-[649px] bg-free mt-20 pt-[150px]">
       <div class="max-w-container mx-auto">
         <h2 class="text-4xl font-bold text-center mb-12">
-          {{ $t("about_discover") }}<br />
-          <label class="text-[#910000]">{{ $t("about_free_tour") }}</label>
+          {{ $t("discover_cyprus") }}<br />
+          <label class="text-[#E8711D]">{{ $t("free") }}</label>
+          {{ $t("tour_3_4_days") }}
         </h2>
         <NuxtLink
           to="/Cyprus"
           class="bg-white hover:bg-black hover:text-white mx-auto transition font-medium w-56 h-12 text-2xl flex justify-center items-center shadow-black shadow-sm rounded-xl"
-          >{{ $t("about_more_details") }}</NuxtLink
         >
+          {{ $t("more_details") }}
+        </NuxtLink>
       </div>
     </div>
     <div class="max-w-container mx-auto mt-[88px] mb-[100px]">
@@ -97,7 +99,7 @@
       <div class="flex justify-between gap-8">
         <div
           v-for="_ in 2"
-          class="w-1/2 h-[305px] border border-black rounded-lg flex justify-center items-center"
+          class="w-1/2 h-[305px] shadow-md rounded-lg flex justify-center items-center"
         >
           <div class="w-[400px]">
             <div class="flex items-center gap-7">

@@ -16,16 +16,29 @@ const find = ref(false);
 
 <template>
   <div>
-    <div class="w-full h-[645px] bg-company relative">
-      <div class="max-w-container mx-auto pt-48 flex flex-col gap-4">
-        <h2 class="text-5xl font-bold">{{ $t("company_name") }}</h2>
+    <div class="w-full h-[645px] bg-[#E8711D] relative">
+      <div
+        class="max-w-container mx-auto pt-[90px] flex flex-col items-center gap-4 text-white"
+      >
+        <!-- <h2 class="text-5xl font-bold">{{ $t("company_name") }}</h2>
         <p class="text-xl font-medium">
           {{ $t("slogan") }}<br />
           {{ $t("best_real_estate") }}
+        </p> -->
+        <div>
+          <NuxtImg src="/Home/logo-text.png" class="w-[286px] h-[144px]" />
+        </div>
+        <h2 class="text-6xl font-serif text-center uppercase my-6 w-[744px]">
+          {{ $t("life_in_cyprus") }}
+        </h2>
+        <p>{{ $t("dream") }}</p>
+        <div class="bg-white w-[578px] h-[2px]"></div>
+        <p>
+          {{ $t("comfort") }}
         </p>
         <NuxtLink
           to="/Collections"
-          class="bg-white hover:bg-black hover:text-white transition font-medium w-40 h-9 text-lg flex justify-center items-center shadow-black shadow-2xl rounded-xl"
+          class="bg-white text-[#E8711D] hover:bg-black hover:text-white transition font-medium w-40 h-9 text-lg flex justify-center items-center shadow-black shadow-2xl rounded"
         >
           {{ $t("collections") }}
         </NuxtLink>
@@ -54,7 +67,7 @@ const find = ref(false);
     <h2 class="text-3xl font-bold mx-auto text-center w-[745px] mb-8">
       {{ $t("find_perfect_property") }}
     </h2>
-    <div class="w-full min-h-[333px] bg-[#E9D7CB]">
+    <div class="w-full min-h-[333px] bg-[#F3B27F]">
       <div class="max-w-container mx-auto py-5 flex justify-between">
         <div>
           <p class="text-xl font-bold mb-2">{{ $t("show_on_map") }}</p>
@@ -151,7 +164,7 @@ const find = ref(false);
       <div class="max-w-container mx-auto">
         <h2 class="text-4xl font-bold text-center mb-12">
           {{ $t("discover_cyprus") }}<br />
-          <label class="text-[#910000]">{{ $t("free") }}</label>
+          <label class="text-[#E8711D]">{{ $t("free") }}</label>
           {{ $t("tour_3_4_days") }}
         </h2>
         <NuxtLink
