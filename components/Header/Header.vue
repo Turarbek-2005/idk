@@ -3,7 +3,7 @@ import { useI18n } from "vue-i18n";
 import { ref, computed } from "vue";
 
 const { locale, t } = useI18n();
-
+const router = useRouter();
 const languages = ref([
   { code: "ru", label: "Русский", short: "РУС" },
   { code: "tr", label: "Türkçe", short: "TÜR" },
@@ -21,6 +21,23 @@ const setLanguage = (code: string) => {
   locale.value = code;
   localStorage.setItem("user-lang", code);
 };
+
+const username = ref("");
+const password = ref("");
+const error = ref("");
+// const handleLogin = async () => {
+//   const payload = {
+//     username: username.value,
+//     password: password.value,
+//   };
+//   try {
+//     const res = await signIn(payload);
+//     console.log("Logged in successfully", res);
+//   } catch (error) {
+//     console.error("Login failed:", error);
+//   }
+// };
+// getRealEstateList();
 </script>
 
 <template>
@@ -51,17 +68,24 @@ const setLanguage = (code: string) => {
                 <h2 class="text-3xl font-bold mb-7">{{ t("login") }}</h2>
                 <div class="flex flex-col gap-4 mb-6">
                   <input
+                    v-model="username"
                     type="text"
                     class="w-72 h-12 shadow-xl outline-none rounded-lg pl-2"
                     :placeholder="t('your_account')"
                   />
                   <input
+                    v-model="password"
                     type="password"
                     class="w-72 h-12 shadow-xl outline-none rounded-lg pl-2"
                     :placeholder="t('your_password')"
                   />
                 </div>
-                <DialogClose>
+
+                <p v-if="error" class="text-red-500 text-sm mb-2">
+                  {{ error }}
+                </p>
+
+                <DialogClose as="div">
                   <NuxtLink
                     to="/Admin/Collections"
                     class="bg-white hover:bg-black hover:text-white transition font-medium w-[88px] h-6 text-[10px] flex justify-center items-center shadow-black shadow-sm rounded-md"

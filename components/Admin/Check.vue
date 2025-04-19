@@ -1,14 +1,12 @@
 <script setup lang="ts">
-defineProps<{ checkbox: boolean }>();
+defineProps<{ checkbox: boolean; label: String; icon: String }>();
 </script>
 <template>
-  <div
-    class="min-w-[163px] h-[35px] p-[10px] flex items-center rounded-lg shadow-xl"
-  >
+  <div class="h-[35px] p-[10px] flex items-center rounded-lg shadow-xl">
     <div class="mr-2">
-      <NuxtImg src="/Admin/vector.svg" width="20" height="18" />
+      <NuxtImg :src="`/Admin/сheckboxes/${icon}`" width="20" height="18" />
     </div>
-    <label>{{ $t("pool") }}</label>
+    <label>{{ label }}</label>
     <Checkbox v-if="checkbox" class="ml-auto" />
   </div>
 </template>

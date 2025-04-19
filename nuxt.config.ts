@@ -26,4 +26,13 @@ export default defineNuxtConfig({
      */
     componentDir: "./components/ui",
   },
+  nitro: {
+    devProxy: {
+      "/api": {
+        target: "http://api:9000",
+        changeOrigin: true,
+        autoRewrite: true, // Использование правильной опции
+      },
+    },
+  },
 });
